@@ -8,7 +8,6 @@ com.comcast.oscar.compiler.docsiscompiler
 com.comcast.oscar.compiler.packetcablecompiler
 com.comcast.oscar.configurationfile
 com.comcast.oscar.constants
-com.comcast.oscar.examples.cli
 com.comcast.oscar.interpreter
 com.comcast.oscar.parser
 com.comcast.oscar.snmp4j.smi
