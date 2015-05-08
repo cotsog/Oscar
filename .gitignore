@@ -4,7 +4,6 @@
 .mtj.tmp/
 
 # Package Files #
-snmp4j-smi.jar
 *.war
 *.ear
 
@@ -12,8 +11,8 @@ snmp4j-smi.jar
 *.pdf
 
 # Directories #
-mibs/bin
 test/
+com/
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
