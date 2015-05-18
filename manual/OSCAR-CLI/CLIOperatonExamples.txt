@@ -1,21 +1,6 @@
 #Create Directories - Initial Installation
 java -jar oscar.jar
 
-#Compile MIBS basic
-java -jar oscar.jar -M
-
-#Compile MIBS basic with SMI conformance
-java -jar oscar.jar -M t
-
-#Compile MIBS basic without SMI conformance
-java -jar oscar.jar -M f
-
-#Compile MIBS basic with SMI conformance and verbose output
-java -jar oscar.jar -M t v
-
-#Compile MIBS basic without SMI conformance and verbose output
-java -jar oscar.jar -M f v
-
 ################################################################################
 #                               DOCSIS                                         
 ################################################################################
