@@ -232,10 +232,10 @@ public class DirectoryStructure {
 			fMibsDir().mkdir();
 		}
 		
-		if(!fMibsBinaryDir().exists()) 
+		/*if(!fMibsBinaryDir().exists()) 
 		{
 			fMibsBinaryDir().mkdir();
-		}
+		}*/
 		
 		if(!fMibsTextDir().exists()) 
 		{
