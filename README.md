@@ -25,4 +25,5 @@ View JavaDoc: http://comcast.github.io/Oscar/doc/index.html
 ### Known Issues
 
 * Add Multiple CommonTlvInserts at one time
+* Doesn't build on Travis-Ci.
 
