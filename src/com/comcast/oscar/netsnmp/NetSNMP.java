@@ -223,8 +223,8 @@ public class NetSNMP  {
 	
 	/**
 	 * 
-	 * @param sOID
-	 * @return
+	 * @param sOID .1.3.6.1.2.1.69.1.2.1.2.1 OR docsDevNmAccessIp.1
+	 * @return Description of OID
 	 */
 	public static String getDescription(String sOID) {
 		
@@ -233,7 +233,7 @@ public class NetSNMP  {
 		String sSnmpTranslate = "";	
 		
 		if (debug|localDebug)
-			System.out.println("NetSNMP.toTextualOID(): " + sOID);
+			System.out.println("NetSNMP.getDescription(): " + sOID);
 		
 		/* If not installed, bypass and return input */
 		if (!isSnmptranslateInstalled()) {
@@ -252,13 +252,23 @@ public class NetSNMP  {
 					Constants.SNMP_TRANSLATE_DESCRIPTION_TEXTUAL_OID +
 					sOID;			
 		}
-				
+		
+		if (debug|localDebug)
+			System.out.println("NetSNMP.getDescription() TRANSLATE-CLI: " + sSnmpTranslate);
+		
 		Matcher mDescription = NETSNMP_DESCRIPTION.matcher(runSnmpTranslate(sSnmpTranslate).toString());
 		
 		if (mDescription.find()) {			
-			sDescription = PrettyPrint.ToParagraphForm(mDescription.group(1).replaceAll("\\s+", " "));		
+			sDescription = "\n" + PrettyPrint.ToParagraphForm(mDescription.group(1).replaceAll("\\s+", " "));		
 		}
-				
+		
+		if (debug|localDebug)
+			System.out.println("NetSNMP.getDescription() TRANSLATE-DESCRIPTION: " + sDescription);
+		
+		if (sDescription.isEmpty()) {
+			sDescription = "\nVerify that MIBS are loaded for OID: " + sOID;
+		}
+		
 		return sDescription;	
 	}
 
